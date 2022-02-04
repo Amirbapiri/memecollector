@@ -80,7 +80,10 @@ class RedditMemeCollector:
             self._download_image(subreddit_name, image_url)
         return "Done :)"
 
+    def start(self, subreddit_name: str, limit: int = 30):
+        return self.download_images(subreddit_name, limit)
+
 
 if __name__ == "__main__":
     r = RedditMemeCollector()
-    r.download_images("memes", limit=5)
+    r.start(subreddit_name="memes", limit=5)
